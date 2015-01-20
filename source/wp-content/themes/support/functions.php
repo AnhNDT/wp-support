@@ -36,12 +36,12 @@ function _register_custom_post_type($label, $slag) {
 			'labels' => array(
 				'name' => $label,
 				'singular_name' => $label,
-				//'add_new' => $label . '‚ð’Ç‰Á',
-				//'new_item' => 'V‚µ‚¢' . $label,
-				//'view_news' => $label . '‚ð•\Ž¦',
-				//'not_found' => $label . '‚ÍŒ©‚Â‚©‚è‚Ü‚¹‚ñ‚Å‚µ‚½',
-				//'not_found_in_trash' => 'ƒSƒ~” ‚É' . $label . '‚Í‚ ‚è‚Ü‚¹‚ñB',
-				//'search_items' => $label . '‚ðŒŸõ',
+				//'add_new' => $label . 'ã‚’è¿½åŠ ',
+				//'new_item' => 'æ–°ã—ã„' . $label,
+				//'view_news' => $label . 'ã‚’è¡¨ç¤º',
+				//'not_found' => $label . 'ã¯è¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã§ã—ãŸ',
+				//'not_found_in_trash' => 'ã‚´ãƒŸç®±ã«' . $label . 'ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚',
+				//'search_items' => $label . 'ã‚’æ¤œç´¢',
 			),
 			'public' => true,
 			'show_ui' => true,
@@ -50,7 +50,7 @@ function _register_custom_post_type($label, $slag) {
 			'hierarchical' => true,
 			'menu_position' => 5,
 			'supports' => array('title', 'editor', 'author', 'thumbnail', 'comments', 'custom-fields',),
-			'yarpp_support' => true, // YARPPƒvƒ‰ƒOƒCƒ“—p
+			'yarpp_support' => true, // YARPPãƒ—ãƒ©ã‚°ã‚¤ãƒ³ç”¨
 			'query_var' => true,
 			'rewrite' => array('slug' => $slag, 'with_front' => false),
 		)
@@ -64,12 +64,12 @@ function _register_custom_post_type_faq($label, $slag) {
 			'labels' => array(
 				'name' => $label,
 				'singular_name' => $label,
-				//'add_new' => $label . '‚ð’Ç‰Á',
-				//'new_item' => 'V‚µ‚¢' . $label,
-				//'view_news' => $label . '‚ð•\Ž¦',
-				//'not_found' => $label . '‚ÍŒ©‚Â‚©‚è‚Ü‚¹‚ñ‚Å‚µ‚½',
-				//'not_found_in_trash' => 'ƒSƒ~” ‚É' . $label . '‚Í‚ ‚è‚Ü‚¹‚ñB',
-				//'search_items' => $label . '‚ðŒŸõ',
+				//'add_new' => $label . 'ã‚’è¿½åŠ ',
+				//'new_item' => 'æ–°ã—ã„' . $label,
+				//'view_news' => $label . 'ã‚’è¡¨ç¤º',
+				//'not_found' => $label . 'ã¯è¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã§ã—ãŸ',
+				//'not_found_in_trash' => 'ã‚´ãƒŸç®±ã«' . $label . 'ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚',
+				//'search_items' => $label . 'ã‚’æ¤œç´¢',
 			),
 			'public' => true,
 			'show_ui' => true,
@@ -78,7 +78,7 @@ function _register_custom_post_type_faq($label, $slag) {
 			'hierarchical' => true,
 			'menu_position' => 5,
 			'supports' => array('title', 'editor', 'author', 'thumbnail', 'comments', 'custom-fields',),
-			'yarpp_support' => true, // YARPPƒvƒ‰ƒOƒCƒ“—p
+			'yarpp_support' => true, // YARPPãƒ—ãƒ©ã‚°ã‚¤ãƒ³ç”¨
 			'query_var' => true,
 			'rewrite' => array('slug' => $slag, 'with_front' => false),
 			'taxonomies' => array('post_tag', 'category'),
@@ -88,3 +88,10 @@ function _register_custom_post_type_faq($label, $slag) {
 }
 add_action('init', 'add_custom_post_type_faq');
 add_action('init', 'add_custom_post_type');
+
+/**
+ *
+ */
+if (is_admin()) {
+	include_once 'functions-tag.php';
+}
